@@ -1,4 +1,9 @@
 repos:
+  # Python Dependencies
+  - repo: https://github.com/astral-sh/uv-pre-commit
+    rev: "0.6.17"
+    hooks:
+      - id: uv-lock
   # Python Code Quality
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: "v0.11.7"
@@ -17,13 +22,6 @@ repos:
     rev: "v1.15.0"
     hooks:
       - id: mypy
-  # Python Tests
-  #- repo: https://github.com/christophmeissner/pytest-pre-commit
-  #  rev: "1.0.0"
-  #  hooks:
-  #  - id: pytest
-  #    pass_filenames: false
-  #    always_run: true
   # Robot Framework Code Quality
   - repo: https://github.com/MarketSquare/robotframework-robocop
     # https://robocop.readthedocs.io/en/stable/integrations.html#pre-commit
