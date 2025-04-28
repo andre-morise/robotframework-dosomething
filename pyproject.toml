@@ -4,7 +4,8 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 authors = [
-    { name = "Daniel Biehl", email = "dbiehl@live.de" }
+    { name = "Daniel Biehl", email = "dbiehl@live.de" },
+    { name = "Florian Kromer", email = "kromer-florian@protonmail.com" },
 ]
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -19,6 +20,23 @@ dependencies = [
     "robotframework>=7.2.2",
 ]
 
+# https://docs.astral.sh/ruff/configuration/
+[tool.ruff.lint]
+extend-select = ["I"]
+
+# https://docs.pytest.org/en/7.1.x/reference/reference.html#ini-options-ref
+[tool.pytest.ini_options]
+testpaths = ["utests"]
+
+# https://github.com/jendrikseipp/vulture?tab=readme-ov-file#configuration
+[tool.vulture]
+min_confidence = 100
+paths = ["src"]
+
+# https://robotcode.io/03_reference/config
+[tool.robot]
+paths = ["atests"]
+
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
@@ -28,5 +46,8 @@ packages = ["src/DoSomething"]
 
 [dependency-groups]
 dev = [
+    "pre-commit>=4.2.0",
+    "pytest>=8.3.5",
     "robotframework-tidy>=4.16.0",
+    "ruff>=0.11.7",
 ]

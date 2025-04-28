@@ -43,7 +43,14 @@
 			"settings": {
 				"python.experiments.enabled": false,
 				"python.terminal.activateEnvInCurrentTerminal": true,
-				"python.defaultInterpreterPath": ".venv/bin/python"
+				"python.defaultInterpreterPath": ".venv/bin/python",
+		        // https://code.visualstudio.com/docs/python/testing
+        		// https://code.visualstudio.com/docs/python/settings-reference#_testing-settings
+        		"python.testing.pytestArgs": [
+          			"utests"
+        		],
+				"python.testing.unittestEnabled": false,
+				"python.testing.pytestEnabled": true
 			}
 		}
 	}
