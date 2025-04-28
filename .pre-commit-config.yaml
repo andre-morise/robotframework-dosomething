@@ -46,3 +46,24 @@ repos:
         exclude: ^.devcontainer/devcontainer.json
         args: [--autofix, --no-sort-keys]
       - id: trailing-whitespace
+
+# https://stackoverflow.com/questions/70778806/pre-commit-not-using-virtual-environment
+
+  # Python Tests
+  - repo: local
+    hooks:
+      - id: pytest
+        name: pytest Tests
+        entry: pytest
+        language: system
+        pass_filenames: false
+  # Robot Framework Tests
+  - repo: local
+    hooks:
+      - id: robot-framework-tests
+        name: Robot Framework Tests
+        entry: robotcode
+        language: system
+        pass_filenames: false
+        args:
+          - robot
