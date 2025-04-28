@@ -40,6 +40,8 @@ testpaths = ["utests"]
 # https://robotcode.io/03_reference/config
 [tool.robot]
 paths = ["atests"]
+[tool.robot.variables]
+MY_VAR = "Hello, World!"
 
 [build-system]
 requires = ["hatchling"]
