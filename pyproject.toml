@@ -24,14 +24,18 @@ dependencies = [
 [tool.ruff.lint]
 extend-select = ["I"]
 
-# https://docs.pytest.org/en/7.1.x/reference/reference.html#ini-options-ref
-[tool.pytest.ini_options]
-testpaths = ["utests"]
-
 # https://github.com/jendrikseipp/vulture?tab=readme-ov-file#configuration
 [tool.vulture]
 min_confidence = 100
 paths = ["src"]
+
+# https://deptry.com/usage/#configuration
+[tool.deptry.per_rule_ignores]
+DEP002 = ["robotframework"]
+
+# https://docs.pytest.org/en/7.1.x/reference/reference.html#ini-options-ref
+[tool.pytest.ini_options]
+testpaths = ["utests"]
 
 # https://robotcode.io/03_reference/config
 [tool.robot]
@@ -46,6 +50,7 @@ packages = ["src/DoSomething"]
 
 [dependency-groups]
 dev = [
+    "deptry>=0.23.0",
     "pre-commit>=4.2.0",
     "pytest>=8.3.5",
     "robotcode[runner]>=1.0.3",
