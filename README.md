@@ -21,6 +21,16 @@ A template for modern [Robot Framework](https://github.com/robotframework/robotf
   - [`tox-uv`](https://github.com/tox-dev/tox-uv)
     for compatibility testing with multiple versions of Python [which are not end-of-life](https://devguide.python.org/versions/#status-of-python-versions)
 
+## Library hints
+
+Robot Framework [provides three APIs for implementing libraries](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#different-test-library-apis):
+
+- [Static API](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#creating-test-library-class-or-module) (and following docs sections)
+- [Dynamic Library API](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#dynamic-library-api)
+- [Hybrid Library API](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#hybrid-library-api)
+
+This template provides the easiest possible starting point w.r.t. library design (Static API).
+
 ## Migration hints
 
 In case you use `poetry`, `pipenv`, `pip-tools` or `pip`
