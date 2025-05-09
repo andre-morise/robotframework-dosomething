@@ -17,6 +17,12 @@ A template for modern [Robot Framework](https://github.com/robotframework/robotf
   - [pytest](https://github.com/pytest-dev/pytest) [unit tests](https://github.com/fkromer/robotframework-dosomething/tree/master/utests)
   - Robot Framework [acceptance tests](https://github.com/fkromer/robotframework-dosomething/tree/master/atests)
 
+## Migration hints
+
+In case you use `poetry`, `pipenv`, `pip-tools` or `pip`
+you can use [`migrate-to-uv`](https://github.com/mkniewallner/migrate-to-uv) to
+easily migrate to `uv`.
+
 ## Project related references
 
 - [https://forum.robotframework.org > Official RF Library template(s)?](https://forum.robotframework.org/t/official-rf-library-project-template-s/)
