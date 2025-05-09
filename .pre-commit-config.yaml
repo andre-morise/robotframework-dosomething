@@ -57,7 +57,16 @@ repos:
         entry: pytest
         language: system
         pass_filenames: false
-  # Robot Framework Tests
+  # Robot Framework Lint and Tests
+  - repo: local
+    hooks:
+      - id: robot-framework-analyzation
+        name: Robot Framework Analyzation
+        entry: robotcode
+        language: system
+        pass_filenames: false
+        args:
+          - analyze
   - repo: local
     hooks:
       - id: robot-framework-tests
