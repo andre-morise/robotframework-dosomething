@@ -6,6 +6,8 @@ A template for modern [Robot Framework](https://github.com/robotframework/robotf
 
 - [Devcontainer](https://containers.dev/) for fully reproducible local and remote development
 - [`vscode`](https://github.com/microsoft/vscode) as IDE
+- GitHub
+  - [Dependabot](https://github.com/dependabot) for automated dependency updates (devcontainer, github-actions)
 - Python Tooling
   - [`uv`](https://github.com/astral-sh/uv) for dependency management
   - [`pyproject.toml`](https://github.com/fkromer/robotframework-dosomething/tree/master/pyproject.toml) for centralized tool configuration
