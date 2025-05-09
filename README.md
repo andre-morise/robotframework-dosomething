@@ -29,6 +29,12 @@ Robot Framework [provides three APIs for implementing libraries](https://robotfr
 - [Dynamic Library API](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#dynamic-library-api)
 - [Hybrid Library API](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#hybrid-library-api)
 
+Python libraries may be hosted on different processes or machines than Robot Framework itself is running on.
+Those libraries are called "remote libraries" and make use of the
+[Remote Library Interface](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#remote-library-interface).
+The [PythonRemoteServer](https://github.com/robotframework/PythonRemoteServer/)
+implements a generic remote server in Python.
+
 This template provides the easiest possible starting point w.r.t. library design (Static API).
 
 ## Migration hints
