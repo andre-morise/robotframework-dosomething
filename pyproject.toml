@@ -4,18 +4,21 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 authors = [
-    { name = "Daniel Biehl", email = "dbiehl@live.de" },
-    { name = "Florian Kromer", email = "kromer-florian@protonmail.com" },
+    { name = "Your name", email = "your@email.com" },
 ]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
     "Framework :: Robot Framework :: Library"
 ]
-requires-python = ">=3.13"
+requires-python = ">=3.9"
 dependencies = [
     "robotframework>=7.2.2",
 ]
@@ -32,6 +35,30 @@ paths = ["src"]
 # https://deptry.com/usage/#configuration
 [tool.deptry.per_rule_ignores]
 DEP002 = ["robotframework"]
+
+# https://tox.wiki/en/latest/config.html#pyproject-toml-ini
+[tool.tox]
+legacy_tox_ini = """
+    [tox]
+    skipsdist = true
+    envlist = py39, py310, py311, py312, py313
+
+    [gh-actions]
+    python =
+        3.9: py39
+        3.10: py310
+        3.11: py311
+        3.12: py312
+        3.13: py313
+
+    [testenv]
+    passenv = PYTHON_VERSION
+    allowlist_externals = uv
+    commands =
+        uv sync --python {envpython}
+        uv run robotcode robot .
+        uv run pytest .
+"""
 
 # https://docs.pytest.org/en/7.1.x/reference/reference.html#ini-options-ref
 [tool.pytest.ini_options]
@@ -55,7 +82,8 @@ dev = [
     "deptry>=0.23.0",
     "pre-commit>=4.2.0",
     "pytest>=8.3.5",
-    "robotcode[runner]>=1.0.3",
+    "robotcode[all]>=1.2.0",
     "robotframework-tidy>=4.16.0",
     "ruff>=0.11.7",
+    "tox-uv>=1.25.0",
 ]

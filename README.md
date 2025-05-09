@@ -16,8 +16,10 @@ A template for modern [Robot Framework](https://github.com/robotframework/robotf
   - [`vulture`](https://github.com/jendrikseipp/vulture) for finding dead code
   - [`pre-commit`](https://github.com/pre-commit/pre-commit) for preventing commiting bad quality code
 - Tests
-  - [pytest](https://github.com/pytest-dev/pytest) [unit tests](https://github.com/fkromer/robotframework-dosomething/tree/master/utests)
-  - Robot Framework [acceptance tests](https://github.com/fkromer/robotframework-dosomething/tree/master/atests)
+  - [`pytest`](https://github.com/pytest-dev/pytest) [unit tests](https://github.com/fkromer/robotframework-dosomething/tree/master/utests)
+  - `robot` [acceptance tests](https://github.com/fkromer/robotframework-dosomething/tree/master/atests)
+  - [`tox-uv`](https://github.com/tox-dev/tox-uv)
+    for compatibility testing with multiple versions of Python [which are not end-of-life](https://devguide.python.org/versions/#status-of-python-versions)
 
 ## Migration hints
 
@@ -28,3 +30,9 @@ easily migrate to `uv`.
 ## Project related references
 
 - [https://forum.robotframework.org > Official RF Library template(s)?](https://forum.robotframework.org/t/official-rf-library-project-template-s/)
+
+## Acknowledgements
+
+This project is partially based on the
+[cookiecutter-uv](https://github.com/fpgmaas/cookiecutter-uv/)
+repository.
