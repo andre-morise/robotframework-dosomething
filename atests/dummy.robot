@@ -1,10 +1,16 @@
+*** Comments ***
+# robocop: disable=missing-doc-suite
+
+
 *** Settings ***
-Library    DoSomething
+Library     DoSomething
+
 
 *** Variables ***
-${MY_VAR}    Hello World
+${MY_VAR}       Hello World
+
 
 *** Test Cases ***
-first
+First    # robocop: disable=missing-doc-test-case
     Hello World
-    Log  ${MY_VAR}
+    Log    ${MY_VAR}

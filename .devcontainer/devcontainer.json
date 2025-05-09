@@ -59,6 +59,10 @@
 					"editor.formatOnSave": true,
 					"editor.defaultFormatter": "charliermarsh.ruff"
 				},
+				"[robot]": {
+					"editor.formatOnSave": true,
+					"editor.defaultFormatter": "d-biehl.robotcode"
+				},
 		        // https://code.visualstudio.com/docs/python/testing
         		// https://code.visualstudio.com/docs/python/settings-reference#_testing-settings
         		"python.testing.pytestArgs": [

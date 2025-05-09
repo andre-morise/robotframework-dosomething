@@ -27,7 +27,6 @@ repos:
     # https://robocop.readthedocs.io/en/stable/integrations.html#pre-commit
     rev: "v6.0.0"
     hooks:
-      - id: robocop
       - id: robocop-format
   # Other Pre Commit Hooks
   - repo: https://github.com/pre-commit/pre-commit-hooks
