@@ -7,15 +7,35 @@ on:
     branches: [main]
 
 jobs:
+  code-quality:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Set up the environment
+        uses: ./.github/actions/setup-python-env
+        with:
+          python-version: "3.13"
+
+      - name: Code issue check
+        run: uv run ruff check .
+
+      - name: Code format check
+        run: uv run ruff format --check .
+
+      - name: Dead code check
+        run: uv run vulture .
+
+      - name: Dependency check
+        run: uv run deptry .
+
   typing:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
       fail-fast: false
-    defaults:
-      run:
-        shell: bash
     steps:
       - name: Check out
         uses: actions/checkout@v4
@@ -35,9 +55,6 @@ jobs:
       matrix:
         python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
       fail-fast: false
-    defaults:
-      run:
-        shell: bash
     steps:
       - name: Check out
         uses: actions/checkout@v4

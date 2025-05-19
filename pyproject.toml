@@ -30,7 +30,8 @@ extend-select = ["I"]
 # https://github.com/jendrikseipp/vulture?tab=readme-ov-file#configuration
 [tool.vulture]
 min_confidence = 100
-paths = ["src"]
+paths = ["src/**", "utests"]
+exclude = [".venv", ".tox"]
 
 # https://deptry.com/usage/#configuration
 [tool.deptry.per_rule_ignores]
