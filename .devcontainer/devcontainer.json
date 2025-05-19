@@ -35,7 +35,8 @@
 				"ms-python.python",
 				"ms-python.debugpy",
 				"ms-python.mypy-type-checker",
-				"charliermarsh.ruff"
+				"charliermarsh.ruff",
+				"me-dutour-mathieu.vscode-github-actions"
 			],
 			"settings": {
 				"python.experiments.enabled": false,
