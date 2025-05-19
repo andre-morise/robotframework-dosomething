@@ -50,5 +50,8 @@ easily migrate to `uv`.
 ## Acknowledgements
 
 This project is partially based on the
-[cookiecutter-uv](https://github.com/fpgmaas/cookiecutter-uv/)
+
+- [fpgmaas/cookiecutter-uv](https://github.com/fpgmaas/cookiecutter-uv/) and
+- [d-biehl/robot_uv_libtest](https://github.com/d-biehl/robot_uv_libtest)
+
 repository.
