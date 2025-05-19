@@ -81,6 +81,7 @@ packages = ["src/DoSomething"]
 [dependency-groups]
 dev = [
     "deptry>=0.23.0",
+    "mypy>=1.15.0",
     "pre-commit>=4.2.0",
     "pytest>=8.3.5",
     "robotcode[all]>=1.2.0",
