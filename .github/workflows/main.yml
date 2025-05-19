@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  code-quality:
+  python-quality:
     runs-on: ubuntu-latest
     steps:
       - name: Check out
@@ -30,8 +30,23 @@ jobs:
       - name: Dependency check
         run: uv run deptry .
 
+  robot-quality:
+    needs: python-quality
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Set up the environment
+        uses: ./.github/actions/setup-python-env
+        with:
+          python-version: "3.13"
+
+      - name: Robot code check
+        run: uv run robotcode analyze code
+
   typing:
-    needs: code-quality
+    needs: robot-quality
     runs-on: ubuntu-latest
     strategy:
       matrix:
