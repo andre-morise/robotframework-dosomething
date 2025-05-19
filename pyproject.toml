@@ -69,7 +69,7 @@ testpaths = ["utests"]
 [tool.robot]
 paths = ["atests"]
 [tool.robot.variables]
-MY_VAR = "Hello, World!"
+#MY_VAR = "Hello, World!"
 
 [build-system]
 requires = ["hatchling"]
