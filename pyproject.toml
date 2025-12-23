@@ -3,29 +3,44 @@ name = "robotframework-dosomething"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-authors = [
-    { name = "Your name", email = "your@email.com" },
-]
+authors = [{ name = "Your name", email = "your@email.com" }]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
-    "Framework :: Robot Framework :: Library"
+    "Framework :: Robot Framework :: Library",
 ]
-requires-python = ">=3.9"
-dependencies = [
-    "robotframework>=7.2.2",
-]
+requires-python = ">=3.10"
+dependencies = ["robotframework>=7.3.2"]
 
 # https://docs.astral.sh/ruff/configuration/
 [tool.ruff.lint]
 extend-select = ["I"]
+
+# https://robocop.dev/stable/configuration/configuration_reference/
+[tool.robocop.lint]
+ignore = ["missing-doc-suite"] # DOC03
+[tool.robocop.format]
+select = [
+    # defaults
+]
+extend-select = [
+    "align-keywords-section",
+    "align-templated-test-cases",
+    "align-test-cases-section",
+    "rename-variables",
+    "replace-with-var",
+]
+configure = [
+    "AlignKeywordsSection.alignment_type=auto",
+    "AlignTestCasesSection.alignment_type=auto",
+    "RenameVariables.convert_camel_case=True",
+]
 
 # https://github.com/jendrikseipp/vulture?tab=readme-ov-file#configuration
 [tool.vulture]
@@ -42,11 +57,10 @@ DEP002 = ["robotframework"]
 legacy_tox_ini = """
     [tox]
     skipsdist = true
-    envlist = py39, py310, py311, py312, py313
+    envlist = py310, py311, py312, py313
 
     [gh-actions]
     python =
-        3.9: py39
         3.10: py310
         3.11: py311
         3.12: py312
@@ -68,8 +82,7 @@ testpaths = ["utests"]
 # https://robotcode.io/03_reference/config
 [tool.robot]
 paths = ["atests"]
-[tool.robot.variables]
-#MY_VAR = "Hello, World!"
+variable_files = ["variables.yaml"]
 
 [build-system]
 requires = ["hatchling"]
@@ -80,13 +93,13 @@ packages = ["src/DoSomething"]
 
 [dependency-groups]
 dev = [
-    "deptry>=0.23.0",
-    "mypy>=1.15.0",
-    "pre-commit>=4.2.0",
-    "pytest>=8.3.5",
-    "robotcode[all]>=1.2.0",
-    "robotframework-tidy>=4.16.0",
-    "ruff>=0.11.7",
-    "tox-uv>=1.25.0",
+    "deptry>=0.24.0",
+    "mypy>=1.18.2",
+    "pre-commit>=4.5.0",
+    "pytest>=9.0.1",
+    "robotcode[all]>=2.0.3",
+    "robotframework-robocop>=7.1.0",
+    "ruff>=0.14.6",
+    "tox-uv>=1.25.0,<1.29.0",
     "vulture>=2.14",
 ]

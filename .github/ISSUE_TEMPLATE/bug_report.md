@@ -28,8 +28,8 @@ If applicable, add screenshots or log output to help explain your problem.
 ## Environment (please complete the following information):
 
 - OS: [e.g. Ubuntu 22.04, Windows 11]
-- Python version: [e.g. 3.12]
-- Other dependencies and versions: [e.g. ruff 0.4.0]
+- Python version: [e.g. 3.13]
+- Other dependencies and versions: [e.g. ruff 0.14.6]
 
 ## Additional context
 

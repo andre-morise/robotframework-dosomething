@@ -1,77 +1,77 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/python
 {
-	"name": "Default",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/python:3.13-bookworm",
-	"features": {
-		"ghcr.io/devcontainers/features/common-utils:2": {
-			"installZsh": true,
-			"configureZshAsDefaultShell": true,
-			"installOhMyZsh": true,
-			"installOhMyZshConfig": true,
-			"upgradePackages": true,
-			"username": "devcontainer",
-			"userUid": "1001",
-			"userGid": "1001"
-		},
-		"ghcr.io/va-h/devcontainers-features/uv:1": {
-			"shellautocompletion": true,
-			"version": "0.6.17"
-		}
-	},
-	"containerEnv": {
-		"UV_LINK_MODE": "copy"
-	},
-	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "uv sync",
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	"remoteUser": "devcontainer",
-	"customizations": {
-		"vscode": {
-			"extensions": [
-				"d-biehl.robotcode",
-				"tamasfe.even-better-toml",
-				"ms-python.python",
-				"ms-python.debugpy",
-				"ms-python.mypy-type-checker",
-				"charliermarsh.ruff",
-				"me-dutour-mathieu.vscode-github-actions"
-			],
-			"settings": {
-				"python.experiments.enabled": false,
-				"python.terminal.activateEnvInCurrentTerminal": true,
-				"python.defaultInterpreterPath": ".venv/bin/python",
-				// https://code.visualstudio.com/docs/python/linting
-				"python.linting.enabled": true,
-				"python.linting.ruffEnabled": true,
-				"python.linting.pylintEnabled": false,
-				"python.linting.flake8Enabled": false,
-				"python.linting.mypyEnabled": true,
-				"python.linting.pycodestyleEnabled": false,
-				"python.linting.banditEnabled": false,
-				"python.linting.pyflakesEnabled": false,
-				"python.linting.pylamaEnabled": false,
-				"ruff.importStrategy": "fromEnvironment",
-				"mypy-type-checker.importStrategy": "fromEnvironment",
-				// https://code.visualstudio.com/docs/python/formatting
-				"editor.formatOnSave": true,
-				"[python]": {
-					"editor.formatOnSave": true,
-					"editor.defaultFormatter": "charliermarsh.ruff"
-				},
-				"[robot]": {
-					"editor.formatOnSave": true,
-					"editor.defaultFormatter": "d-biehl.robotcode"
-				},
-		        // https://code.visualstudio.com/docs/python/testing
-        		// https://code.visualstudio.com/docs/python/settings-reference#_testing-settings
-        		"python.testing.pytestArgs": [
-          			"utests"
-        		],
-				"python.testing.unittestEnabled": false,
-				"python.testing.pytestEnabled": true
-			}
-		}
-	}
+  "name": "Default",
+  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+  "image": "mcr.microsoft.com/devcontainers/python:3.13-bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": true,
+      "configureZshAsDefaultShell": true,
+      "installOhMyZsh": true,
+      "installOhMyZshConfig": true,
+      "upgradePackages": true,
+      "username": "devcontainer",
+      "userUid": "1001",
+      "userGid": "1001"
+    },
+    "ghcr.io/va-h/devcontainers-features/uv:1": {
+      "shellautocompletion": true,
+      "version": "0.9.11"
+    }
+  },
+  "containerEnv": {
+    "UV_LINK_MODE": "copy"
+  },
+  // Use 'postCreateCommand' to run commands after the container is created.
+  "postCreateCommand": "uv sync",
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  "remoteUser": "devcontainer",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "d-biehl.robotcode",
+        "tamasfe.even-better-toml",
+        "ms-python.python",
+        "ms-python.debugpy",
+        "ms-python.mypy-type-checker",
+        "charliermarsh.ruff",
+        "me-dutour-mathieu.vscode-github-actions"
+      ],
+      "settings": {
+        "python.experiments.enabled": false,
+        "python.terminal.activateEnvInCurrentTerminal": true,
+        "python.defaultInterpreterPath": ".venv/bin/python",
+        // https://code.visualstudio.com/docs/python/linting
+        "python.linting.enabled": true,
+        "python.linting.ruffEnabled": true,
+        "python.linting.pylintEnabled": false,
+        "python.linting.flake8Enabled": false,
+        "python.linting.mypyEnabled": true,
+        "python.linting.pycodestyleEnabled": false,
+        "python.linting.banditEnabled": false,
+        "python.linting.pyflakesEnabled": false,
+        "python.linting.pylamaEnabled": false,
+        "ruff.importStrategy": "fromEnvironment",
+        "mypy-type-checker.importStrategy": "fromEnvironment",
+        // https://code.visualstudio.com/docs/python/formatting
+        "editor.formatOnSave": true,
+        "[python]": {
+          "editor.formatOnSave": true,
+          "editor.defaultFormatter": "charliermarsh.ruff"
+        },
+        "[robot]": {
+          "editor.formatOnSave": true,
+          "editor.defaultFormatter": "d-biehl.robotcode"
+        },
+        // https://code.visualstudio.com/docs/python/testing
+        // https://code.visualstudio.com/docs/python/settings-reference#_testing-settings
+        "python.testing.pytestArgs": [
+          "utests"
+        ],
+        "python.testing.unittestEnabled": false,
+        "python.testing.pytestEnabled": true
+      }
+    }
+  }
 }
