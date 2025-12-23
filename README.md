@@ -12,12 +12,14 @@ A template for modern [Robot Framework](https://github.com/robotframework/robotf
   - [`uv`](https://github.com/astral-sh/uv) for dependency management
   - [`pyproject.toml`](https://github.com/fkromer/robotframework-dosomething/tree/master/pyproject.toml) for centralized tool configuration
   - [`ruff`](https://github.com/astral-sh/ruff) for linting, formatting and import sorting
+  - [`robocop`](https://github.com/MarketSquare/robotframework-robocop) for Robot Framework linting and formatting
   - [`deptry`](https://github.com/fpgmaas/deptry) for finding unused, missing and transitive dependencies
   - [`vulture`](https://github.com/jendrikseipp/vulture) for finding dead code
   - [`pre-commit`](https://github.com/pre-commit/pre-commit) for preventing commiting bad quality code
 - Tests
   - [`pytest`](https://github.com/pytest-dev/pytest) [unit tests](https://github.com/fkromer/robotframework-dosomething/tree/master/utests)
   - `robot` [acceptance tests](https://github.com/fkromer/robotframework-dosomething/tree/master/atests)
+    with examples demonstrating test templates, YAML variable files, and differently scoped variables (local, suite, and global)
   - [`tox-uv`](https://github.com/tox-dev/tox-uv)
     for compatibility testing with multiple versions of Python [which are not end-of-life](https://devguide.python.org/versions/#status-of-python-versions)
 
